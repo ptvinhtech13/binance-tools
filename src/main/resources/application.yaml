@@ -1,0 +1,55 @@
+
+server:
+  port: 8080
+spring:
+  application:
+    name: binance-tools
+    profiles:
+      active: local
+  datasource:
+    url: jdbc:postgresql://localhost:5432/binance
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    initialize: false
+    tomcat:
+      max-idle: 1
+      max-active: 5
+      initial-size: 5
+      min-idle: 0
+      max-age: 901000
+      time-between-eviction-runs-millis: 13000
+      min-evictable-idle-time-millis: 61000
+      remove-abandoned: true
+      remove-abandoned-timeout: 3601
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        generate_statistics: true
+        jdbc:
+          batch_size: 5
+          order_inserts: true
+          lob:
+            non_contextual_creation: true
+
+  flyway:
+    enabled: false
+
+
+logging:
+  level:
+    com.elsevier.eols: TRACE
+    com.elsevier.eols.commons.logging.filter.LoggingFilter: TRACE
+    org.hibernate: INFO
+    org.hibernate.SQL: DEBUG
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000
+        loggerLevel: basic
+#        errorDecoder: com.eols.commons.okHttp.SpringWebClientErrorDecoder
