@@ -1,4 +1,3 @@
-
 server:
   port: 8080
 spring:
@@ -7,11 +6,25 @@ spring:
     profiles:
       active: local
   datasource:
-    url: jdbc:postgresql://localhost:5432/binance
-    driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: postgres
-    initialize: false
+#    url: jdbc:postgresql://localhost:5432/binance
+#    driver-class-name: org.postgresql.Driver
+#    username: postgres
+#    password: postgres
+#    initialize: false
+#    url: jdbc:h2:mem:binance_crawlling;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=10
+    url: jdbc:h2:file:./h2-data/binance_crawlling;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=10
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    h2:
+      console:
+        enabled: true
+        path: /h2-console
+        settings:
+          trace: false
+#          web-allow-others: false
     tomcat:
       max-idle: 1
       max-active: 5
@@ -26,16 +39,17 @@ spring:
     open-in-view: false
     properties:
       hibernate:
-        format_sql: true
-        generate_statistics: true
+        ddl-auto: create
+#        format_sql: true
+#        generate_statistics: true
         jdbc:
-          batch_size: 5
+          batch_size: 10
           order_inserts: true
           lob:
             non_contextual_creation: true
 
   flyway:
-    enabled: false
+    enabled: true
 
 
 logging:
@@ -43,7 +57,7 @@ logging:
     com.elsevier.eols: TRACE
     com.elsevier.eols.commons.logging.filter.LoggingFilter: TRACE
     org.hibernate: INFO
-    org.hibernate.SQL: DEBUG
+    org.hibernate.SQL: INFO
 
 feign:
   client:

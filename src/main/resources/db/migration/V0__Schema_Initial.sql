@@ -6,6 +6,7 @@ create table candlestick_data
         constraint candlestick_data_pk
             primary key,
     open_time          timestamp,
+    symbol          varchar(100),
     open_price         numeric,
     high_price         numeric,
     low_price          numeric,
@@ -30,3 +31,5 @@ create index candlestick_data_low_price_index
 
 create index candlestick_data_open_price_index
     on candlestick_data (open_price);
+
+create sequence if not exists candlestick_data_seq MINVALUE 1 START WITH 1 INCREMENT BY 1000 NO CYCLE;

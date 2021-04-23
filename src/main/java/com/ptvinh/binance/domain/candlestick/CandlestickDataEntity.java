@@ -1,5 +1,6 @@
 package com.ptvinh.binance.domain.candlestick;
 
+import com.ptvinh.binance.domain.CoinPair;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -57,4 +58,7 @@ public class CandlestickDataEntity {
 
   @Column(name = "quote_asset_volume")
   private BigDecimal quoteAssetVolume;
+
+  @Column(name = "symbol")
+  private CoinPair symbol;
 }

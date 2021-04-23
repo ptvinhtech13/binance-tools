@@ -10,8 +10,8 @@ import java.util.List;
 @FeignClient(name = "binance-domain-client", url = "https://api.binance.com")
 public interface BinanceClient {
 
-  @GetMapping(value = "/api/v3/klines?interval=1m&limit=500", params = {"symbol"})
-  List<JsonNode> getCandlesickData(@RequestParam("symbol") String symbol);
+  @GetMapping(value = "/api/v3/klines?interval=1m&limit=1000", params = {"symbol", "startTime", "endTime"})
+  List<JsonNode> getCandlesickData(@RequestParam("symbol") String symbol, @RequestParam("startTime") long from);
 }
 
 // api/v3/klines?interval=1m&limit=500&symbol=DOGEUSDT
