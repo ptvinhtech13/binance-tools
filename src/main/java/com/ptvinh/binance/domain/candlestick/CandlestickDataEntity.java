@@ -10,6 +10,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -59,6 +61,7 @@ public class CandlestickDataEntity {
   @Column(name = "quote_asset_volume")
   private BigDecimal quoteAssetVolume;
 
+  @Enumerated(EnumType.STRING)
   @Column(name = "symbol")
   private CoinPair symbol;
 }

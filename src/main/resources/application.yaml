@@ -11,13 +11,10 @@ spring:
 #    username: postgres
 #    password: postgres
 #    initialize: false
-#    url: jdbc:h2:mem:binance_crawlling;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=10
     url: jdbc:h2:file:./h2-data/binance_crawlling;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=10
     driver-class-name: org.h2.Driver
     username: sa
     password: password
-#    database-platform: org.hibernate.dialect.H2Dialect
-#    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
     h2:
       console:
         enabled: true
