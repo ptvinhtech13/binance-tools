@@ -1,0 +1,35 @@
+coin:
+  symbols:
+    - symbol: BTCUSDT
+      sync-up: true
+      skip-report: false
+    - symbol: DOGEUSDT
+      sync-up: true
+      skip-report: false
+    - symbol: BNBUSDT
+      sync-up: true
+      skip-report: false
+    - symbol: TKOUSDT
+      sync-up: true
+      skip-report: false
+    - symbol: TOMOUSDT
+      sync-up: true
+      skip-report: false
+    - symbol: ADAUSDT
+      sync-up: true
+      skip-report: false
+    - symbol: CAKEUSDT
+      sync-up: true
+      skip-report: false
+    - symbol: TRXUSDT
+      sync-up: true
+      skip-report: false
+    - symbol: LINAUSDT
+      sync-up: true
+      skip-report: false
+    - symbol: BTTUSDT
+      sync-up: true
+      skip-report: false
+    - symbol: WINUSDT
+      sync-up: true
+      skip-report: false

@@ -44,7 +44,6 @@ spring:
           order_inserts: true
           lob:
             non_contextual_creation: true
-
   flyway:
     enabled: true
 
