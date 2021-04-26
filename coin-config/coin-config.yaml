@@ -1,35 +1,46 @@
-coin:
-  symbols:
-    - symbol: BTCUSDT
-      sync-up: true
-      skip-report: false
-    - symbol: DOGEUSDT
-      sync-up: true
-      skip-report: false
-    - symbol: BNBUSDT
-      sync-up: true
-      skip-report: false
-    - symbol: TKOUSDT
-      sync-up: true
-      skip-report: false
-    - symbol: TOMOUSDT
-      sync-up: true
-      skip-report: false
-    - symbol: ADAUSDT
-      sync-up: true
-      skip-report: false
-    - symbol: CAKEUSDT
-      sync-up: true
-      skip-report: false
-    - symbol: TRXUSDT
-      sync-up: true
-      skip-report: false
-    - symbol: LINAUSDT
-      sync-up: true
-      skip-report: false
-    - symbol: BTTUSDT
-      sync-up: true
-      skip-report: false
-    - symbol: WINUSDT
-      sync-up: true
-      skip-report: false
+symbols:
+  - symbol: BTCUSDT
+    symbolDisplay: BTC-USDT
+    syncUp: true
+    disabledReport: false
+  - symbol: DOGEUSDT
+    symbolDisplay: DOGE-USDT
+    downTarget: 0.26215
+    syncUp: true
+    disabledReport: true
+  - symbol: BNBUSDT
+    symbolDisplay: BNB-USDT
+    downTarget: 490
+    syncUp: true
+    disabledReport: false
+  - symbol: TKOUSDT
+    symbolDisplay: TKO-USDT
+    downTarget: 2.05
+    syncUp: true
+    disabledReport: true
+  - symbol: ADAUSDT
+    symbolDisplay: ADA-USDT
+    downTarget: 0.8
+    syncUp: true
+    disabledReport: false
+  - symbol: CAKEUSDT
+    symbolDisplay: CAKE-USDT
+    syncUp: true
+    disabledReport: false
+  - symbol: TRXUSDT
+    symbolDisplay: TRX-USDT
+    syncUp: true
+    disabledReport: true
+  - symbol: LINAUSDT
+    symbolDisplay: LINA-USDT
+    syncUp: true
+    disabledReport: false
+  - symbol: BTTUSDT
+    symbolDisplay: BTT-USDT
+    syncUp: true
+    disabledReport: true
+  - symbol: WINUSDT
+    symbolDisplay: WIN-USDT
+    downTarget: 0.00115
+    syncUp: true
+    disabledReport: true

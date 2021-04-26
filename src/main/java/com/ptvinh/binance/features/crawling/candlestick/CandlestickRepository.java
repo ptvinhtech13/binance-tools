@@ -17,8 +17,10 @@ public interface CandlestickRepository extends JpaRepository<CandlestickDataEnti
       "where symbol = :symbol\n" +
       "  and close_time = \n" +
       "      (select max(close_time) \n" +
-      "       from candlestick_data" +
-      "       where symbol = :symbol)", nativeQuery = true)
+      "       from candlestick_data\n" +
+      "       where symbol = :symbol)\n" +
+      " ORDER BY id DESC\n" +
+      " LIMIT 1", nativeQuery = true)
   Optional<CandlestickDataEntity> findOneByMaxCloseTime(@Param("symbol") String symbol);
 
   @Query(value = "select *\n" +

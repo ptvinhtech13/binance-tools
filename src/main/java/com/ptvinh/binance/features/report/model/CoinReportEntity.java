@@ -1,6 +1,5 @@
 package com.ptvinh.binance.features.report.model;
 
-import com.ptvinh.binance.domain.CoinPair;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,8 +11,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,9 +33,8 @@ public class CoinReportEntity {
   @SequenceGenerator(name = "coinReportSeqGen", sequenceName = "coinReportSeq", initialValue = 1, allocationSize = 1000)
   private Long id;
 
-  @Enumerated(EnumType.STRING)
   @Column(name = "symbol")
-  private CoinPair symbol;
+  private String symbol;
 
   @Column(name = "lowest_price")
   private double lowestPriceIn;

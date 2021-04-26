@@ -14,7 +14,9 @@ create table candlestick_data
     volume             numeric,
     close_time         timestamp,
     base_asset_volume  numeric,
-    quote_asset_volume numeric
+    quote_asset_volume numeric,
+    created_at         timestamp default now(),
+    updated_at         timestamp default now()
 );
 
 create unique index if not exists candlestick_data_id_uindex
@@ -22,6 +24,9 @@ create unique index if not exists candlestick_data_id_uindex
 
 create index if not exists candlestick_data_close_price_index
     on candlestick_data (open_time);
+
+create index if not exists candlestick_data_created_at_index
+    on candlestick_data (created_at);
 
 create index if not exists candlestick_data_close_price_index
     on candlestick_data (close_time);
